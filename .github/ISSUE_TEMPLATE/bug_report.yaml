@@ -1,5 +1,5 @@
 name: Bug Report
-description: File a bug report.
+description: Report something that isn’t working as expected.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 projects: ["octo-org/1"]
@@ -9,39 +9,44 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to file a bug report!
+        Please describe the issue as clearly as possible.
   - type: input
     id: contact
     attributes:
-      label: Contact Details
+      label: Contact Info (optional)
       placeholder: ex. email@example.com
   - type: textarea
     id: what-happened
     attributes:
       label: What happened?
-      description: Also, what did you expect to happen?
-      placeholder: A bug happened!
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Affected Version
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+      description: Describe what you expected and what actually happened.
+      placeholder: The modal didn't open after clicking "Save".
     validations:
       required: true
   - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Go to Settings
+        2. Click "Save"
+        3. Observe the error
+  - type: input
+    id: version
+    attributes:
+      label: App Version
+      placeholder: ex. 1.2.5-dev
+    validations:
+      required: false
+  - type: textarea
     id: logs
     attributes:
-      label: Log Output
+      label: Relevant Log Output (optional)
       render: shell
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
+      label: Agreement
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
