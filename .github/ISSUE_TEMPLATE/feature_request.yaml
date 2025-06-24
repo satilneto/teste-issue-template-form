@@ -1,0 +1,56 @@
+name: Feature Request
+description: Sugerir uma nova funcionalidade ou melhoria.
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+projects: ["octo-org/1"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sugira uma nova funcionalidade ou melhoria para o produto.
+  - type: input
+    id: tenant
+    attributes:
+      label: Ambiente (Tenant)
+      placeholder: ex. empresa-x, staging, prod-br
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versão
+      placeholder: ex. 3.2.0 20250623
+    validations:
+      required: false
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Tier
+      options:
+        - local
+        - tiny
+        - small
+        - medium
+        - large
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema ou necessidade essa funcionalidade resolve?
+      placeholder: Exemplo: "Usuários não conseguem exportar os dados em CSV."
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Descreva a proposta de solução
+      placeholder: Exemplo: "Adicionar botão de exportar ao topo da tabela."
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      placeholder: Exemplo: "Essa funcionalidade foi solicitada pela área de dados."
