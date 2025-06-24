@@ -1,6 +1,6 @@
 name: Bug Report
-description: Report something that isn’t working as expected.
-title: "[Bug]: "
+description: Reportar um erro ou comportamento inesperado.
+title: "[BUG] "
 labels: ["bug", "triage"]
 projects: ["octo-org/1"]
 assignees:
@@ -9,44 +9,70 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please describe the issue as clearly as possible.
+        Obrigado por reportar um erro! Preencha as informações abaixo para que possamos reproduzir e resolver o problema.
   - type: input
-    id: contact
+    id: tenant
     attributes:
-      label: Contact Info (optional)
-      placeholder: ex. email@example.com
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Describe what you expected and what actually happened.
-      placeholder: The modal didn't open after clicking "Save".
+      label: Ambiente (Tenant)
+      placeholder: ex. empresa-x, staging, prod-br
     validations:
       required: true
-  - type: textarea
-    id: steps
-    attributes:
-      label: Steps to Reproduce
-      placeholder: |
-        1. Go to Settings
-        2. Click "Save"
-        3. Observe the error
   - type: input
     id: version
     attributes:
-      label: App Version
-      placeholder: ex. 1.2.5-dev
+      label: Versão
+      description: Inclua a versão e a data do deploy se possível.
+      placeholder: ex. 3.2.0 20250623
     validations:
-      required: false
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Tier
+      description: Qual o porte do cliente ou ambiente?
+      options:
+        - local
+        - tiny
+        - small
+        - medium
+        - large
+      default: 2
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+      description: O que você esperava que acontecesse? O que aconteceu de fato?
+      placeholder: O botão “Salvar” não funcionou após preencher o formulário.
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Acesse Configurações
+        2. Clique em “Salvar”
+        3. Observe o erro
+  - type: checkboxes
+    id: navegador
+    attributes:
+      label: Navegador
+      description: Em qual(is) navegador(es) o erro ocorreu?
+      options:
+        - label: Chrome
+        - label: Firefox
+        - label: Safari
+        - label: Outro (especificar abaixo)
+  - type: input
+    id: versao_navegador
+    attributes:
+      label: Versão do navegador (se aplicável)
+      placeholder: ex. Chrome 125.0.6422.141
   - type: textarea
     id: logs
     attributes:
-      label: Relevant Log Output (optional)
+      label: Logs ou mensagens relevantes
+      description: Cole aqui qualquer log de erro ou mensagem exibida.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Agreement
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
