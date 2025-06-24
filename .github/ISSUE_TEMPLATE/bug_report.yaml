@@ -2,6 +2,7 @@ name: Bug Report
 description: Reportar um erro ou comportamento inesperado.
 title: "[BUG] "
 labels: ["bug", "triage"]
+type: Bug
 projects: ["octo-org/1"]
 assignees:
   - octocat
@@ -21,7 +22,6 @@ body:
     id: version
     attributes:
       label: Versão
-      description: Inclua a versão e a data do deploy se possível.
       placeholder: ex. 3.2.0 20250623
     validations:
       required: true
@@ -29,7 +29,6 @@ body:
     id: tier
     attributes:
       label: Tier
-      description: Qual o porte do cliente ou ambiente?
       options:
         - local
         - tiny
@@ -59,7 +58,6 @@ body:
     id: navegador
     attributes:
       label: Navegador
-      description: Em qual(is) navegador(es) o erro ocorreu?
       options:
         - label: Chrome
         - label: Firefox
@@ -74,5 +72,4 @@ body:
     id: logs
     attributes:
       label: Logs ou mensagens relevantes
-      description: Cole aqui qualquer log de erro ou mensagem exibida.
       render: shell
