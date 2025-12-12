@@ -35,7 +35,7 @@ body:
         - small
         - medium
         - large
-      default: todos
+      default: 1
     validations:
       required: true
   - type: textarea
