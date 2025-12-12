@@ -1,11 +1,9 @@
 name: Bug Report
 description: Reportar um erro ou comportamento inesperado.
 title: "[BUG] "
-labels: ["bug", "triage"]
+labels: ["bug"]
 type: Bug
-projects: ["octo-org/1"]
-assignees:
-  - octocat
+projects: ["Fortics-Tecnologia/genier-base"]
 body:
   - type: markdown
     attributes:
@@ -30,12 +28,14 @@ body:
     attributes:
       label: Tier
       options:
+        - todos
         - local
+        - starter
         - tiny
         - small
         - medium
         - large
-      default: 2
+      default: todos
     validations:
       required: true
   - type: textarea
